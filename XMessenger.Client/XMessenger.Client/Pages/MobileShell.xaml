@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:pages="clr-namespace:XMessenger.Client.Pages"
+       xmlns:root="clr-namespace:XMessenger.Client"
+       xmlns:viewmodels="clr-namespace:XMessenger.Client.ViewModels"
+       x:DataType="viewmodels:ShellViewModel"
+       x:Class="XMessenger.Client.Pages.MobileShell">
+    <TabBar>
+        <Tab Title="{Binding Profile.Title}"
+             Icon="{Binding Profile.Icon}"
+             IsEnabled="{Binding Profile.IsEnabled}">
+            <ShellContent ContentTemplate="{DataTemplate pages:ProfilePage}" />
+        </Tab>
+        <Tab Title="{Binding Groups.Title}"
+             Icon="{Binding Groups.Icon}"
+             IsEnabled="{Binding Groups.IsEnabled}">
+            <ShellContent ContentTemplate="{DataTemplate pages:ToBeSoonPage}" />
+        </Tab>
+        <Tab Title="{Binding News.Title}"
+             Icon="{Binding News.Icon}"
+             IsEnabled="{Binding News.IsEnabled}">
+            <ShellContent ContentTemplate="{DataTemplate pages:ToBeSoonPage}" />
+        </Tab>
+        <Tab Title="{Binding Messenger.Title}"
+             Icon="{Binding Messenger.Icon}"
+             IsEnabled="{Binding Messenger.IsEnabled}">
+            <ShellContent ContentTemplate="{DataTemplate pages:ToBeSoonPage}" />
+        </Tab>
+        <Tab Title="{Binding Settings.Title}"
+             Icon="{Binding Settings.Icon}"
+             IsEnabled="{Binding Settings.IsEnabled}">
+            <ShellContent ContentTemplate="{DataTemplate pages:SettingsPage}" />
+        </Tab>
+
+    </TabBar>
+</Shell>

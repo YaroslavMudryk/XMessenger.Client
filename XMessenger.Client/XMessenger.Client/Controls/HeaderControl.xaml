@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:res="clr-namespace:XMessenger.Client.Resources.Strings"
+             x:Class="XMessenger.Client.Controls.HeaderControl">
+    <ContentView.Content>
+        <ContentView>
+            <OnPlatform x:TypeArguments="View">
+                <On Platform="WinUI, MacCatalyst">
+                    <Grid 
+                        RowDefinitions="auto, auto">
+                        <SearchBar x:Name="searchBar"
+                                   HorizontalOptions="Start"
+                                   WidthRequest="460"
+                                   Text="{Binding TextToSearch, Source={x:Reference selfMediaElementView}}"
+                                   SearchCommand="{Binding SearchCommand, Source={x:Reference selfMediaElementView}}" 
+                                   SemanticProperties.Description="{x:Static res:AppResource.Semantic_Description_Tap_Search}"/>
+
+                        <Label Text="{x:Static res:AppResource.See_All_Searches}"
+                               Style="{StaticResource BodyLLabelStyle}"
+                               TextColor="{StaticResource Primary}"
+                               Grid.Row="1"
+                               HorizontalOptions="End"
+                               Margin="0,0,30,0"
+                               SemanticProperties.Description="{x:Static res:AppResource.Semantic_Description_Tap_See_All_Categories}"
+                               IsVisible="{Binding ShowSearchCategories, Source={x:Reference selfMediaElementView}}"
+                               FontSize="16">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Grid>
+                </On>
+
+                <On Platform="Android,iOS">
+                    <Grid ColumnDefinitions="auto, *"
+                          Margin="16,12">
+                        <Image Source="{AppThemeBinding Light=logo_header_horizontal.png,Dark=logo_color_horizontal_darkmode.png}"
+                               HeightRequest="34"
+                               WidthRequest="125"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Start" />
+                        <Image Source="{AppThemeBinding Light=search.png, Dark=search_dark.png}"
+                               Grid.Column="1"
+                               VerticalOptions="Center"
+                               HorizontalOptions="End"
+                               HeightRequest="20"
+                               WidthRequest="20"
+                               SemanticProperties.Description="{x:Static res:AppResource.Semantic_Description_Tap_Search}">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Grid>
+                </On>
+            </OnPlatform>
+        </ContentView>
+    </ContentView.Content>
+</ContentView>
