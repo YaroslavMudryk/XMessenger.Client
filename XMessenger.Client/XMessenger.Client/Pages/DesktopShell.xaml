@@ -5,6 +5,7 @@
        FlyoutBehavior="Locked"
        xmlns:root="clr-namespace:XMessenger.Client"
        xmlns:viewmodels="clr-namespace:XMessenger.Client.ViewModels"
+       xmlns:ext="clr-namespace:XMessenger.Client.Extensions"
        x:DataType="viewmodels:ShellViewModel"
        x:Class="XMessenger.Client.Pages.DesktopShell">
     <Shell.FlyoutHeader>
@@ -25,28 +26,28 @@
         </Tab>
     </FlyoutItem>
 
-    <FlyoutItem Title="{Binding Groups.Title}"
+    <FlyoutItem Title="{ext:Tranlsate Groups}"
                 Icon="{Binding Groups.Icon}">
         <Tab>
             <ShellContent ContentTemplate="{DataTemplate pages:ToBeSoonPage}" />
         </Tab>
     </FlyoutItem>
 
-    <FlyoutItem Title="{Binding News.Title}"
+    <FlyoutItem Title="{ext:Tranlsate NewsFeed}"
                 Icon="{Binding News.Icon}">
         <Tab>
             <ShellContent ContentTemplate="{DataTemplate pages:ToBeSoonPage}" />
         </Tab>
     </FlyoutItem>
 
-    <FlyoutItem Title="{Binding Messenger.Title}"
+    <FlyoutItem Title="{ext:Tranlsate Messenger}"
                 Icon="{Binding Messenger.Icon}">
         <Tab>
             <ShellContent ContentTemplate="{DataTemplate pages:ToBeSoonPage}" />
         </Tab>
     </FlyoutItem>
 
-    <FlyoutItem Title="{Binding Settings.Title}"
+    <FlyoutItem Title="{ext:Tranlsate Settings}"
                 Icon="{Binding Settings.Icon}">
         <Tab>
             <ShellContent ContentTemplate="{DataTemplate pages:SettingsPage}" />

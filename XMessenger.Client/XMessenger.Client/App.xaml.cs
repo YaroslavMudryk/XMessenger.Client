@@ -10,6 +10,8 @@ public partial class App : Application
 
         DeviceHelper.SetDeviceTheme();
 
+        DeviceHelper.SetDeviceLanguage();
+
         if (DeviceHelper.IsMobile())
             MainPage = new MobileShell();
         if (DeviceHelper.IsDesktop())
@@ -50,13 +52,13 @@ public partial class App : Application
 
     private void InitUser()
     {
-        AppSettings.IsAuthenticated = false;
+        AppSettings.IsAuthenticated = true;
         AppSettings.User = new AuthUser
         {
             Id = 1,
-            FirstName = "User",
-            LastName = "Userenko",
-            Fullname = "User Userenko"
+            FirstName = "Mike",
+            LastName = "Kostenko",
+            Fullname = "Mike Kostenko"
         };
     }
 }

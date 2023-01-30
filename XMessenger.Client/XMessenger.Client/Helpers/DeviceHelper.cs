@@ -1,4 +1,6 @@
-﻿namespace XMessenger.Client.Helpers
+﻿using XMessenger.Client.Resources.Strings;
+
+namespace XMessenger.Client.Helpers
 {
     public static class DeviceHelper
     {
@@ -44,6 +46,12 @@
                     break;
 
             }
+        }
+
+        public static void SetDeviceLanguage()
+        {
+            var cultureInfo = new CultureInfo(AppSettings.Language);
+            LangResource.Culture = cultureInfo;
         }
     }
 }

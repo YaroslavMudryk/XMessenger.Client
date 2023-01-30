@@ -16,6 +16,12 @@ namespace XMessenger.Client.Helpers
             set => Preferences.Set(nameof(Theme), value.ToString());
         }
 
+        public static string Language
+        {
+            get => Preferences.Get(nameof(Language), "uk-UA");
+            set => Preferences.Set(nameof(Language), value.ToString());
+        }
+
         public static bool IsWifiOnlyEnabled
         {
             get => Preferences.Get(nameof(IsWifiOnlyEnabled), false);

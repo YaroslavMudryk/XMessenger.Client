@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:res="clr-namespace:XMessenger.Client.Resources.Strings"
+             xmlns:ext="clr-namespace:XMessenger.Client.Extensions"
              x:Class="XMessenger.Client.Controls.HeaderControl">
     <ContentView.Content>
         <ContentView>
@@ -14,15 +14,15 @@
                                    WidthRequest="460"
                                    Text="{Binding TextToSearch, Source={x:Reference selfMediaElementView}}"
                                    SearchCommand="{Binding SearchCommand, Source={x:Reference selfMediaElementView}}" 
-                                   SemanticProperties.Description="{x:Static res:AppResource.Semantic_Description_Tap_Search}"/>
+                                   SemanticProperties.Description="{ext:Tranlsate Semantic_Description_Tap_Search}"/>
 
-                        <Label Text="{x:Static res:AppResource.See_All_Searches}"
+                        <Label Text="{ext:Tranlsate See_All_Searches}"
                                Style="{StaticResource BodyLLabelStyle}"
                                TextColor="{StaticResource Primary}"
                                Grid.Row="1"
                                HorizontalOptions="End"
                                Margin="0,0,30,0"
-                               SemanticProperties.Description="{x:Static res:AppResource.Semantic_Description_Tap_See_All_Categories}"
+                               SemanticProperties.Description="{ext:Tranlsate Semantic_Description_Tap_See_All_Categories}"
                                IsVisible="{Binding ShowSearchCategories, Source={x:Reference selfMediaElementView}}"
                                FontSize="16">
                             <Label.GestureRecognizers>
@@ -46,7 +46,7 @@
                                HorizontalOptions="End"
                                HeightRequest="20"
                                WidthRequest="20"
-                               SemanticProperties.Description="{x:Static res:AppResource.Semantic_Description_Tap_Search}">
+                               SemanticProperties.Description="{ext:Tranlsate Semantic_Description_Tap_Search}">
                             <Image.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
                             </Image.GestureRecognizers>

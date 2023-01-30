@@ -121,13 +121,10 @@
     <value>Autodownload using data</value>
   </data>
   <data name="Autodownload_Using_Data_Subtitle" xml:space="preserve">
-    <value>Turn on to allow to download over cellular data if wifi is unavailable.</value>
+    <value>Turn on to allow to download over cellular data if wifi is unavailable</value>
   </data>
   <data name="Dark_Mode" xml:space="preserve">
     <value>Dark Mode</value>
-  </data>
-  <data name="Delete_Played_Episodes" xml:space="preserve">
-    <value>Delete played episodes</value>
   </data>
   <data name="Download_Settings" xml:space="preserve">
     <value>Download settings</value>
@@ -135,13 +132,19 @@
   <data name="Groups" xml:space="preserve">
     <value>Groups</value>
   </data>
-  <data name="Login" xml:space="preserve">
-    <value>Login</value>
+  <data name="Lang_En" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="Lang_Uk" xml:space="preserve">
+    <value>Ukrainian</value>
+  </data>
+  <data name="Light_Mode" xml:space="preserve">
+    <value>Light Mode</value>
   </data>
   <data name="Messenger" xml:space="preserve">
     <value>Messenger</value>
   </data>
-  <data name="News" xml:space="preserve">
+  <data name="NewsFeed" xml:space="preserve">
     <value>News</value>
   </data>
   <data name="Only_Wifi" xml:space="preserve">
@@ -152,6 +155,12 @@
   </data>
   <data name="See_All_Searches" xml:space="preserve">
     <value>See all searches</value>
+  </data>
+  <data name="Select_Lang" xml:space="preserve">
+    <value>Select language</value>
+  </data>
+  <data name="Select_Theme" xml:space="preserve">
+    <value>Select theme</value>
   </data>
   <data name="Semantic_Description_Tap_Search" xml:space="preserve">
     <value>Tap to search text</value>
@@ -170,6 +179,12 @@
   </data>
   <data name="Settings_Info" xml:space="preserve">
     <value>XMessenger demo app developed in MAUI</value>
+  </data>
+  <data name="Theme_Follow_System" xml:space="preserve">
+    <value>Following by system</value>
+  </data>
+  <data name="To_Be_Soon" xml:space="preserve">
+    <value>To be soon 🤗</value>
   </data>
   <data name="Version" xml:space="preserve">
     <value>0.1</value>

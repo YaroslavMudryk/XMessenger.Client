@@ -2,6 +2,7 @@
 {
     public class ShellViewModel : ViewModelBase
     {
+        private LocalizationResourceManager LocalizationResource => LocalizationResourceManager.Instance;
         private List<AppSection> _tabs;
 
         public AppSection Profile { get; set; }
@@ -13,10 +14,10 @@
         public ShellViewModel()
         {
             Profile = new AppSection() { Title = GetProfileTitle(), Icon = "profile_circle.png", IconDark = "profile_circle_dark.png", IsEnabled = true, NeedAuth = false, TargetType = typeof(ProfilePage) };
-            Groups = new AppSection() { Title = AppResource.Groups, Icon = "groups.png", IconDark = "groups_dark.png", IsEnabled = true, NeedAuth = true, TargetType = typeof(ToBeSoonPage) };
-            News = new AppSection() { Title = AppResource.News, Icon = "news.png", IconDark = "news_dark.png", IsEnabled = true, NeedAuth = true, TargetType = typeof(ToBeSoonPage) };
-            Messenger = new AppSection() { Title = AppResource.Messenger, Icon = "chat.png", IconDark = "chat_dark.png", IsEnabled = true, NeedAuth = true, TargetType = typeof(ToBeSoonPage) };
-            Settings = new AppSection() { Title = AppResource.Settings, Icon = "settings.png", IconDark = "settings_dark.png", IsEnabled = true, NeedAuth = false, TargetType = typeof(SettingsPage) };
+            Groups = new AppSection() { Icon = "groups.png", IconDark = "groups_dark.png", IsEnabled = true, NeedAuth = true, TargetType = typeof(ToBeSoonPage) };
+            News = new AppSection() { Icon = "news.png", IconDark = "news_dark.png", IsEnabled = true, NeedAuth = true, TargetType = typeof(ToBeSoonPage) };
+            Messenger = new AppSection() { Icon = "chat.png", IconDark = "chat_dark.png", IsEnabled = true, NeedAuth = true, TargetType = typeof(ToBeSoonPage) };
+            Settings = new AppSection() { Icon = "settings.png", IconDark = "settings_dark.png", IsEnabled = true, NeedAuth = false, TargetType = typeof(SettingsPage) };
 
             _tabs = new List<AppSection>
             {
@@ -53,7 +54,7 @@
         private string GetProfileTitle()
         {
             if (!AppSettings.IsAuthenticated)
-                return AppResource.Login;
+                return LocalizationResource["Login"].ToString();
             return AppSettings.User.FirstName;
         }
     }

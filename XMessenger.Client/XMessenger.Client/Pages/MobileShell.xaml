@@ -4,6 +4,7 @@
        xmlns:pages="clr-namespace:XMessenger.Client.Pages"
        xmlns:root="clr-namespace:XMessenger.Client"
        xmlns:viewmodels="clr-namespace:XMessenger.Client.ViewModels"
+       xmlns:ext="clr-namespace:XMessenger.Client.Extensions"
        x:DataType="viewmodels:ShellViewModel"
        x:Class="XMessenger.Client.Pages.MobileShell">
     <TabBar>
@@ -12,22 +13,22 @@
              IsEnabled="{Binding Profile.IsEnabled}">
             <ShellContent ContentTemplate="{DataTemplate pages:ProfilePage}" />
         </Tab>
-        <Tab Title="{Binding Groups.Title}"
+        <Tab Title="{ext:Tranlsate Groups}"
              Icon="{Binding Groups.Icon}"
              IsEnabled="{Binding Groups.IsEnabled}">
             <ShellContent ContentTemplate="{DataTemplate pages:ToBeSoonPage}" />
         </Tab>
-        <Tab Title="{Binding News.Title}"
+        <Tab Title="{ext:Tranlsate NewsFeed}"
              Icon="{Binding News.Icon}"
              IsEnabled="{Binding News.IsEnabled}">
             <ShellContent ContentTemplate="{DataTemplate pages:ToBeSoonPage}" />
         </Tab>
-        <Tab Title="{Binding Messenger.Title}"
+        <Tab Title="{ext:Tranlsate Messenger}"
              Icon="{Binding Messenger.Icon}"
              IsEnabled="{Binding Messenger.IsEnabled}">
             <ShellContent ContentTemplate="{DataTemplate pages:ToBeSoonPage}" />
         </Tab>
-        <Tab Title="{Binding Settings.Title}"
+        <Tab Title="{ext:Tranlsate Settings}"
              Icon="{Binding Settings.Icon}"
              IsEnabled="{Binding Settings.IsEnabled}">
             <ShellContent ContentTemplate="{DataTemplate pages:SettingsPage}" />

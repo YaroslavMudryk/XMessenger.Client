@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ext="clr-namespace:XMessenger.Client.Extensions"
              x:Class="XMessenger.Client.Pages.ToBeSoonPage"
-             Title="ToBeSoonPage">
+             Style="{StaticResource MainSectionStyle}">
     <Grid>
         <Label 
-            Text="To be soon 🤗"
+            Text="{ext:Tranlsate To_Be_Soon}"
             FontSize="20"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />

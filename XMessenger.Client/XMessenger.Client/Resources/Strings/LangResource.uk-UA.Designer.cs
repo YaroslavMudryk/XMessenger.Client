@@ -22,14 +22,14 @@ namespace XMessenger.Client.Resources.Strings {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class AppResource {
+    internal class LangResource {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal AppResource() {
+        internal LangResource() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace XMessenger.Client.Resources.Strings {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("XMessenger.Client.Resources.Strings.AppResource", typeof(AppResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("XMessenger.Client.Resources.Strings.LangResource", typeof(LangResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +61,7 @@ namespace XMessenger.Client.Resources.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Autodownload using data.
+        ///   Looks up a localized string similar to Автозавантаження з використанням даних.
         /// </summary>
         internal static string Autodownload_Using_Data {
             get {
@@ -70,7 +70,7 @@ namespace XMessenger.Client.Resources.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn on to allow to download over cellular data if wifi is unavailable..
+        ///   Looks up a localized string similar to Увімкніть, щоб дозволити завантажувати через мобільні дані, якщо Wi-Fi недоступний.
         /// </summary>
         internal static string Autodownload_Using_Data_Subtitle {
             get {
@@ -79,7 +79,7 @@ namespace XMessenger.Client.Resources.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dark Mode.
+        ///   Looks up a localized string similar to Темна тема.
         /// </summary>
         internal static string Dark_Mode {
             get {
@@ -88,16 +88,7 @@ namespace XMessenger.Client.Resources.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete played episodes.
-        /// </summary>
-        internal static string Delete_Played_Episodes {
-            get {
-                return ResourceManager.GetString("Delete_Played_Episodes", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Download settings.
+        ///   Looks up a localized string similar to Налаштування завантажень.
         /// </summary>
         internal static string Download_Settings {
             get {
@@ -106,7 +97,7 @@ namespace XMessenger.Client.Resources.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Groups.
+        ///   Looks up a localized string similar to Групи.
         /// </summary>
         internal static string Groups {
             get {
@@ -115,16 +106,34 @@ namespace XMessenger.Client.Resources.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Login.
+        ///   Looks up a localized string similar to Англійська.
         /// </summary>
-        internal static string Login {
+        internal static string Lang_En {
             get {
-                return ResourceManager.GetString("Login", resourceCulture);
+                return ResourceManager.GetString("Lang_En", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Messenger.
+        ///   Looks up a localized string similar to Українська.
+        /// </summary>
+        internal static string Lang_Uk {
+            get {
+                return ResourceManager.GetString("Lang_Uk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Світла тема.
+        /// </summary>
+        internal static string Light_Mode {
+            get {
+                return ResourceManager.GetString("Light_Mode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Діалоги.
         /// </summary>
         internal static string Messenger {
             get {
@@ -133,16 +142,16 @@ namespace XMessenger.Client.Resources.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to News.
+        ///   Looks up a localized string similar to Новини.
         /// </summary>
-        internal static string News {
+        internal static string NewsFeed {
             get {
-                return ResourceManager.GetString("News", resourceCulture);
+                return ResourceManager.GetString("NewsFeed", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Wifi only.
+        ///   Looks up a localized string similar to Тільки Wi-Fi.
         /// </summary>
         internal static string Only_Wifi {
             get {
@@ -151,7 +160,7 @@ namespace XMessenger.Client.Resources.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Profile.
+        ///   Looks up a localized string similar to Профіль.
         /// </summary>
         internal static string Profile {
             get {
@@ -160,7 +169,7 @@ namespace XMessenger.Client.Resources.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to See all searches.
+        ///   Looks up a localized string similar to Переглянути всі пошуки.
         /// </summary>
         internal static string See_All_Searches {
             get {
@@ -169,7 +178,25 @@ namespace XMessenger.Client.Resources.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tap to search text.
+        ///   Looks up a localized string similar to Оберіть мову.
+        /// </summary>
+        internal static string Select_Lang {
+            get {
+                return ResourceManager.GetString("Select_Lang", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Оберіть тему.
+        /// </summary>
+        internal static string Select_Theme {
+            get {
+                return ResourceManager.GetString("Select_Theme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Торкніться, щоб шукати текст.
         /// </summary>
         internal static string Semantic_Description_Tap_Search {
             get {
@@ -178,7 +205,7 @@ namespace XMessenger.Client.Resources.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tap to see all categories.
+        ///   Looks up a localized string similar to Натисніть, щоб переглянути всі категорії.
         /// </summary>
         internal static string Semantic_Description_Tap_See_All_Categories {
             get {
@@ -187,7 +214,7 @@ namespace XMessenger.Client.Resources.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enable or disable dark mode.
+        ///   Looks up a localized string similar to Увімкніть або вимкніть темний режим.
         /// </summary>
         internal static string Semantic_Description_Toggle_Mode {
             get {
@@ -196,7 +223,7 @@ namespace XMessenger.Client.Resources.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enable or disable wifi settings.
+        ///   Looks up a localized string similar to Увімкніть або вимкніть налаштування Wi-Fi.
         /// </summary>
         internal static string Semantic_Description_Toggle_Wifi {
             get {
@@ -205,7 +232,7 @@ namespace XMessenger.Client.Resources.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Settings.
+        ///   Looks up a localized string similar to Налаштування.
         /// </summary>
         internal static string Settings {
             get {
@@ -214,11 +241,29 @@ namespace XMessenger.Client.Resources.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to XMessenger demo app developed in MAUI.
+        ///   Looks up a localized string similar to Демо-програма XMessenger розроблена в MAUI.
         /// </summary>
         internal static string Settings_Info {
             get {
                 return ResourceManager.GetString("Settings_Info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Як в системі.
+        /// </summary>
+        internal static string Theme_Follow_System {
+            get {
+                return ResourceManager.GetString("Theme_Follow_System", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Скоро буде🤗.
+        /// </summary>
+        internal static string To_Be_Soon {
+            get {
+                return ResourceManager.GetString("To_Be_Soon", resourceCulture);
             }
         }
         
