@@ -1,4 +1,6 @@
-﻿namespace XMessenger.Client.ViewModels
+﻿using CommunityToolkit.Mvvm.Input;
+
+namespace XMessenger.Client.ViewModels
 {
     public partial class LoginViewModel : ViewModelBase
     {
@@ -6,6 +8,9 @@
         public IList<SocialLink> SocialLinks { get; set; }
         public int ChunkSize { get; } = 3;
         public bool IsVisibleOtherSocials { get; set; }
+
+        [ObservableProperty]
+        private bool isLogin;
 
         public LoginViewModel()
         {
@@ -46,6 +51,12 @@
             };
 
             IsVisibleOtherSocials = SocialLinks.Any();
+        }
+
+        [RelayCommand]
+        public void ClickLogin(string isLogin)
+        {
+            IsLogin = bool.Parse(isLogin);
         }
     }
 }

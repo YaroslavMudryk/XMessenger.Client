@@ -8,32 +8,54 @@
              Title="{ext:Tranlsate Login_Page}"
              Shell.TabBarIsVisible="False"
              Shell.NavBarIsVisible="False">
-    <Grid RowDefinitions="auto,*,*,*">
-        <Label Text="{ext:Tranlsate Login_Page}"
-               Margin="0,50,0,70"
-               Grid.Row="0"
-               Style="{StaticResource H6LabelStyle}" HorizontalOptions="Center"/>
-
-        <Grid Grid.Row="1" RowDefinitions="*,*,*,*,*">
-            <Label Grid.Row="0" Text="{ext:Tranlsate Login_Email}" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start" Margin="15,20,0,0"/>
-            <Entry Grid.Row="1" Text="{Binding Login}" FontSize="16" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="15,0,15,0"/>
-            <Label Grid.Row="2" Text="{ext:Tranlsate Login_Password}" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start" Margin="15,20,0,0"/>
-            <Entry Grid.Row="3" Text="{Binding Password}" IsPassword="True" FontSize="16" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="15,0,15,0"/>
-            <Button Grid.Row="4" BackgroundColor="Blue" Text="{ext:Tranlsate Login_Button}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="15,0,15,0"/>
+    <Grid RowDefinitions="auto, *">
+        
+        <Grid Grid.Row="0" ColumnDefinitions="*, *" Margin="0,75,0,0">
+            <Button Text="{ext:Tranlsate Login_Page_Login}" TextColor="Black" Grid.Column="0" VerticalOptions="End" HorizontalOptions="End" WidthRequest="150" HeightRequest="75" BackgroundColor="#f0f0f0" CornerRadius="0" Command="{Binding ClickLoginCommand}" CommandParameter="true"/>
+            <Button Text="{ext:Tranlsate Login_Page_Register}" TextColor="Black" Grid.Column="1" VerticalOptions="End" HorizontalOptions="Start" WidthRequest="150" HeightRequest="75" BackgroundColor="#f0ebeb" CornerRadius="0" Command="{Binding ClickLoginCommand}" CommandParameter="false"/>
         </Grid>
 
-        <Grid Grid.Row="2" IsVisible="{Binding IsVisibleOtherSocials}" RowDefinitions="auto, auto">
-            <Label Text="{ext:Tranlsate Login_Other}" VerticalOptions="Start" HorizontalOptions="Center" Margin="0,15,0,15" Grid.Row="0"/>
-            <Grid Grid.Row="1" RowDefinitions="auto, auto" ColumnDefinitions="*, *" Margin="0,0,0,0" HorizontalOptions="Center">
-                <ImageButton Source="{Binding SocialLinks[0].ImageSource}" HeightRequest="60" WidthRequest="75" Grid.Column="0" Grid.Row="0" Padding="5" IsEnabled="{Binding SocialLinks[0].IsAvailable}"/>
-                <ImageButton Source="{Binding SocialLinks[1].ImageSource}" HeightRequest="60" WidthRequest="75" Grid.Column="1" Grid.Row="0" Padding="5" IsEnabled="{Binding SocialLinks[1].IsAvailable}"/>
-                <ImageButton Source="{Binding SocialLinks[2].ImageSource}" HeightRequest="60" WidthRequest="75" Grid.Column="0" Grid.Row="1" Padding="5" IsEnabled="{Binding SocialLinks[2].IsAvailable}"/>
-                <ImageButton Source="{Binding SocialLinks[3].ImageSource}" HeightRequest="60" WidthRequest="75" Grid.Column="1" Grid.Row="1" Padding="5" IsEnabled="{Binding SocialLinks[3].IsAvailable}"/>
+        <Grid Grid.Row="1" BackgroundColor="#f0f0f0" RowDefinitions="auto, auto, auto" IsVisible="{Binding IsLogin}">
+            <Grid Grid.Row="1" RowDefinitions="*,*,*,*,*">
+                <Label Grid.Row="0" Text="{ext:Tranlsate Login_Email}" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start" Margin="15,20,0,0"/>
+                <Entry Grid.Row="1" Text="{Binding Login}" FontSize="16" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="15,0,15,0"/>
+                <Label Grid.Row="2" Text="{ext:Tranlsate Login_Password}" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start" Margin="15,20,0,0"/>
+                <Entry Grid.Row="3" Text="{Binding Password}" IsPassword="True" FontSize="16" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="15,0,15,0"/>
+                <Button Grid.Row="4" BackgroundColor="Blue" Text="{ext:Tranlsate Login_Button}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="15,0,15,0" HeightRequest="50"/>
+            </Grid>
+
+            <Grid Grid.Row="2" IsVisible="{Binding IsVisibleOtherSocials}" RowDefinitions="auto, auto">
+                <Label Text="{ext:Tranlsate Login_Other}" VerticalOptions="Start" HorizontalOptions="Center" Margin="0,15,0,15" Grid.Row="0"/>
+                <Grid Grid.Row="1" RowDefinitions="auto, auto" ColumnDefinitions="*, *" Margin="0,0,0,0" HorizontalOptions="Center">
+                    <ImageButton Source="{Binding SocialLinks[0].ImageSource}" HeightRequest="60" WidthRequest="75" Grid.Column="0" Grid.Row="0" Padding="5" IsEnabled="{Binding SocialLinks[0].IsAvailable}"/>
+                    <ImageButton Source="{Binding SocialLinks[1].ImageSource}" HeightRequest="60" WidthRequest="75" Grid.Column="1" Grid.Row="0" Padding="5" IsEnabled="{Binding SocialLinks[1].IsAvailable}"/>
+                    <ImageButton Source="{Binding SocialLinks[2].ImageSource}" HeightRequest="60" WidthRequest="75" Grid.Column="0" Grid.Row="1" Padding="5" IsEnabled="{Binding SocialLinks[2].IsAvailable}"/>
+                    <ImageButton Source="{Binding SocialLinks[3].ImageSource}" HeightRequest="60" WidthRequest="75" Grid.Column="1" Grid.Row="1" Padding="5" IsEnabled="{Binding SocialLinks[3].IsAvailable}"/>
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="3">
+
             </Grid>
         </Grid>
 
-        <Grid Grid.Row="3">
-            
+        <Grid Grid.Row="1" BackgroundColor="#f0ebeb" RowDefinitions="*,*,*">
+            <Grid.Triggers>
+                <DataTrigger TargetType="Grid" Binding="{Binding IsLogin}" Value="True">
+                    <Setter Property="IsVisible" Value="False"/>
+                </DataTrigger>
+                <DataTrigger TargetType="Grid" Binding="{Binding IsLogin}" Value="False">
+                    <Setter Property="IsVisible" Value="True"/>
+                </DataTrigger>
+            </Grid.Triggers>
+            <Grid Grid.Row="0">
+                
+            </Grid>
+            <Grid Grid.Row="1" >
+                
+            </Grid>
+            <Button BackgroundColor="Blue" Text="{ext:Tranlsate Login_Register}" Grid.Row="2" VerticalOptions="End" HorizontalOptions="FillAndExpand" Margin="15,0,15,15" HeightRequest="50"/>
         </Grid>
+
     </Grid>
 </ContentPage>

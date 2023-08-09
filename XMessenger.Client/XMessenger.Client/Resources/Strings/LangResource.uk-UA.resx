@@ -156,8 +156,17 @@
   <data name="Login_Page" xml:space="preserve">
     <value>Вхід в систему</value>
   </data>
+  <data name="Login_Page_Login" xml:space="preserve">
+    <value>Вхід</value>
+  </data>
+  <data name="Login_Page_Register" xml:space="preserve">
+    <value>Реєстрація</value>
+  </data>
   <data name="Login_Password" xml:space="preserve">
     <value>Пароль</value>
+  </data>
+  <data name="Login_Register" xml:space="preserve">
+    <value>Зареєструватися</value>
   </data>
   <data name="Messenger" xml:space="preserve">
     <value>Діалоги</value>

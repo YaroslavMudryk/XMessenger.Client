@@ -6,7 +6,7 @@ public partial class App : Application
     {
         InitializeComponent();
         AppSettings.IsAuthenticated = false;
-        AppSettings.User = new AuthUser { FirstName = "a" };
+        AppSettings.User = null;
 
         DeviceHelper.SetDeviceTheme();
 
