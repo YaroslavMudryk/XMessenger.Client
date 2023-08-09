@@ -25,10 +25,10 @@
         <Grid Grid.Row="2" IsVisible="{Binding IsVisibleOtherSocials}" RowDefinitions="auto, auto">
             <Label Text="{ext:Tranlsate Login_Other}" VerticalOptions="Start" HorizontalOptions="Center" Margin="0,15,0,15" Grid.Row="0"/>
             <Grid Grid.Row="1" RowDefinitions="auto, auto" ColumnDefinitions="*, *" Margin="0,0,0,0" HorizontalOptions="Center">
-                <ImageButton Source="{Binding SocialLinks[0].ImageSource}" HeightRequest="60" WidthRequest="75" Grid.Column="0" Grid.Row="0" Padding="5" IsEnabled="False"/>
-                <ImageButton Source="{Binding SocialLinks[1].ImageSource}" HeightRequest="60" WidthRequest="75" Grid.Column="1" Grid.Row="0" Padding="5" IsEnabled="False"/>
-                <ImageButton Source="{Binding SocialLinks[2].ImageSource}" HeightRequest="60" WidthRequest="75" Grid.Column="0" Grid.Row="1" Padding="5" IsEnabled="False"/>
-                <ImageButton Source="{Binding SocialLinks[3].ImageSource}" HeightRequest="60" WidthRequest="75" Grid.Column="1" Grid.Row="1" Padding="5" IsEnabled="False"/>
+                <ImageButton Source="{Binding SocialLinks[0].ImageSource}" HeightRequest="60" WidthRequest="75" Grid.Column="0" Grid.Row="0" Padding="5" IsEnabled="{Binding SocialLinks[0].IsAvailable}"/>
+                <ImageButton Source="{Binding SocialLinks[1].ImageSource}" HeightRequest="60" WidthRequest="75" Grid.Column="1" Grid.Row="0" Padding="5" IsEnabled="{Binding SocialLinks[1].IsAvailable}"/>
+                <ImageButton Source="{Binding SocialLinks[2].ImageSource}" HeightRequest="60" WidthRequest="75" Grid.Column="0" Grid.Row="1" Padding="5" IsEnabled="{Binding SocialLinks[2].IsAvailable}"/>
+                <ImageButton Source="{Binding SocialLinks[3].ImageSource}" HeightRequest="60" WidthRequest="75" Grid.Column="1" Grid.Row="1" Padding="5" IsEnabled="{Binding SocialLinks[3].IsAvailable}"/>
             </Grid>
         </Grid>
 
