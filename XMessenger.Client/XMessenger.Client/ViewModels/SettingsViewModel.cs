@@ -1,6 +1,4 @@
-﻿using System.Collections.ObjectModel;
-
-namespace XMessenger.Client.ViewModels
+﻿namespace XMessenger.Client.ViewModels
 {
     public partial class SettingsViewModel : ViewModelBase
     {
@@ -25,9 +23,6 @@ namespace XMessenger.Client.ViewModels
             }
         }
 
-        public List<SettingModel> Languages => _languages;
-        public List<SettingModel> Themes => _themes;
-
         public SettingModel SelectedLanguage
         {
             set
@@ -35,20 +30,20 @@ namespace XMessenger.Client.ViewModels
                 if (_languages.Select(s => s.Value).Contains(value.Value))
                 {
                     AppSettings.Language = value.Value;
-                    LocalizationResource.SetCulture(new CultureInfo(value.Value));
+                    var cult = new CultureInfo(value.Value);
+                    LocalizationResource.SetCulture(cult);
+                    CultureInfo.DefaultThreadCurrentCulture = cult;
+                    CultureInfo.DefaultThreadCurrentUICulture = cult;
                 }
             }
         }
 
-
-        [ObservableProperty]
-        bool isDarkModeEnabled;
+        public List<SettingModel> Themes => _themes;
+        public List<SettingModel> Languages => _languages;
 
         [ObservableProperty]
         bool isWifiOnlyEnabled;
 
-        partial void OnIsDarkModeEnabledChanged(bool value) =>
-            ChangeUserAppTheme(value);
         partial void OnIsWifiOnlyEnabledChanged(bool value) =>
             AppSettings.IsWifiOnlyEnabled = value;
 
@@ -56,7 +51,6 @@ namespace XMessenger.Client.ViewModels
 
         public SettingsViewModel()
         {
-            isDarkModeEnabled = AppSettings.Theme == AppTheme.Dark;
             isWifiOnlyEnabled = AppSettings.IsWifiOnlyEnabled;
 
             _languages = new List<SettingModel>
@@ -92,7 +86,7 @@ namespace XMessenger.Client.ViewModels
                 }
             };
         }
-
+        
         void ChangeUserAppTheme(bool activateDarkMode)
         {
             AppSettings.Theme = activateDarkMode

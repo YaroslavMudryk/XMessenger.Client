@@ -33,19 +33,19 @@
 
         public void CheckAvalibleTabs()
         {
-            if (!AppSettings.IsAuthenticated)
-            {
-                _tabs.Where(s => s.NeedAuth).ForEach(tab =>
-                {
-                    tab.IsEnabled = false;
-                });
-                return;
-            }
             if (AppSettings.IsAuthenticated)
             {
                 _tabs.Where(s => s.NeedAuth).ForEach(tab =>
                 {
                     tab.IsEnabled = true;
+                });
+                return;
+            }
+            else
+            {
+                _tabs.Where(s => s.NeedAuth).ForEach(tab =>
+                {
+                    tab.IsEnabled = false;
                 });
                 return;
             }

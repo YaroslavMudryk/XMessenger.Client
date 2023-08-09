@@ -7,6 +7,8 @@
             builder.Services.AddSingleton<SettingsViewModel>();
             builder.Services.AddSingleton<ShellViewModel>();
 
+            builder.Services.AddScoped<LoginViewModel>();
+
             return builder;
         }
     }

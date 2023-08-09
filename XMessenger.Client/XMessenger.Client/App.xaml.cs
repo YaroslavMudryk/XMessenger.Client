@@ -5,8 +5,8 @@ public partial class App : Application
     public App()
     {
         InitializeComponent();
-
-        InitUser();
+        AppSettings.IsAuthenticated = false;
+        AppSettings.User = new AuthUser { FirstName = "a" };
 
         DeviceHelper.SetDeviceTheme();
 
@@ -48,17 +48,5 @@ public partial class App : Application
             Shell.Current.FlyoutBehavior = FlyoutBehavior.Flyout;
         else
             Shell.Current.FlyoutBehavior = FlyoutBehavior.Locked;
-    }
-
-    private void InitUser()
-    {
-        AppSettings.IsAuthenticated = true;
-        AppSettings.User = new AuthUser
-        {
-            Id = 1,
-            FirstName = "Mike",
-            LastName = "Kostenko",
-            Fullname = "Mike Kostenko"
-        };
     }
 }

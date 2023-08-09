@@ -9,8 +9,8 @@ public static class PagesExtensions
         builder.Services.AddSingleton<SettingsPage>();
 
         // pages that are navigated to
-        builder.Services.AddTransient<LoginPage>();
-        builder.Services.AddTransient<SearchPage>();
+        builder.Services.AddScoped<LoginPage>();
+        builder.Services.AddScoped<SearchPage>();
 
         return builder;
     }

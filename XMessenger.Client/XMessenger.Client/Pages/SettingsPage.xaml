@@ -6,79 +6,29 @@
              xmlns:ext="clr-namespace:XMessenger.Client.Extensions"
              Style="{StaticResource MainSectionStyle}"
              Title="{ext:Tranlsate Settings}">
-    <Grid RowDefinitions="auto,auto,auto,auto,auto,auto,auto,auto"
-          ColumnDefinitions="2*,8*"
+    <Grid RowDefinitions="auto,auto,auto,auto"
+          ColumnDefinitions="50,*"
           Padding="16" Background="{AppThemeBinding Light={StaticResource Grey1}, Dark={StaticResource Grey9}}">
-        <Label Text="{ext:Tranlsate Download_Settings}"
-               Margin="0,0,0,20"
+        <Label Text="{ext:Tranlsate Settings}"
+               Margin="0,0,0,5"
                Style="{StaticResource H6LabelStyle}"
                
-               Grid.ColumnSpan="2"/>
-        <Switch
-            Grid.Row="1"
-            HorizontalOptions="Center"/>
-        <Label Text="{ext:Tranlsate Autodownload_Using_Data}" 
-               Grid.Column="1"
-               Grid.Row="1"
-               SemanticProperties.Description="{ext:Tranlsate Autodownload_Using_Data}"
-               Style="{StaticResource BodySLabelStyle}"
-               VerticalOptions="Center"/>
-        <Label Text="{ext:Tranlsate Autodownload_Using_Data_Subtitle}" 
-               Grid.Column="1" 
-               Grid.Row="2" 
-               SemanticProperties.Description="{ext:Tranlsate Autodownload_Using_Data_Subtitle}"
-               Style="{StaticResource BodySLabelStyle}"/>
+               Grid.ColumnSpan="2"/>        
         <Switch HorizontalOptions="Center"
-                Grid.Row="4"
-                SemanticProperties.Description="{ext:Tranlsate Semantic_Description_Toggle_Mode}"
-                IsToggled="{Binding IsDarkModeEnabled}"
-                Margin="0,24,0,0"/>
-        <Label Text="{ext:Tranlsate Dark_Mode}" 
-               Grid.Column="1"
-               Grid.Row="4" 
-               SemanticProperties.Description="{ext:Tranlsate Dark_Mode}"
-               Margin="0,24,0,0"
-               VerticalOptions="Center"
-               Style="{StaticResource BodySLabelStyle}"/>
-        <Switch HorizontalOptions="Center"
-                Grid.Row="5"
+                Grid.Row="1"
                 SemanticProperties.Description="{ext:Tranlsate Semantic_Description_Toggle_Wifi}"
                 IsVisible="{OnIdiom Default=false,Phone=true}"
                 IsToggled="{Binding IsWifiOnlyEnabled}"
                 Margin="0,24,0,0"/>
         <Label Text="{ext:Tranlsate Only_Wifi}" 
                Grid.Column="1"
-               Grid.Row="5" 
+               Grid.Row="1" 
                SemanticProperties.Description="{ext:Tranlsate Semantic_Description_Toggle_Wifi}"
                Margin="0,24,0,0"
                IsVisible="{OnIdiom Default=false,Phone=true}"
                VerticalOptions="Center"
                Style="{StaticResource BodySLabelStyle}"/>
-        <Picker Grid.ColumnSpan="2" Grid.Row="6" SelectedItem="{Binding SelectedTheme}" ItemsSource="{Binding Themes}" ItemDisplayBinding="{Binding Title}" Title="{ext:Tranlsate Select_Theme}" Style="{StaticResource BodySLabelStyle}"/>
-        <Picker Grid.ColumnSpan="2" Grid.Row="7" SelectedItem="{Binding SelectedLanguage}" ItemsSource="{Binding Languages}" ItemDisplayBinding="{Binding Title}" Title="{ext:Tranlsate Select_Lang}" Style="{StaticResource BodySLabelStyle}"/>
-
-        <!--<Label
-               Grid.ColumnSpan="2"
-               Grid.Row="6" 
-               SemanticProperties.Description="{ext:Tranlsate Settings_Info}"
-               Margin="0,48,0,0"
-               VerticalOptions="Center"
-               Text="{ext:Tranlsate Settings_Info}"
-               Style="{StaticResource BodySLabelStyle}"/>
-        <Label
-               Grid.ColumnSpan="2"
-               Grid.Row="7"
-               Margin="0,11,0,0"
-               VerticalOptions="Center"
-               SemanticProperties.Description="{ext:Tranlsate Version}"
-               Style="{StaticResource BodySLabelStyle}">
-            <Label.FormattedText>
-                <FormattedString>
-                    <Span Text="{ext:Tranlsate Version}" Style="{StaticResource BodySLabelStyle}"/>
-                    <Span Text=" - " Style="{StaticResource BodySLabelStyle}"/>
-                    <Span Text="{Binding AppVersion}" Style="{StaticResource BodySLabelStyle}"/>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>-->
+        <Picker Grid.ColumnSpan="2" Grid.Row="2" SelectedItem="{Binding SelectedTheme}" ItemsSource="{Binding Themes}" ItemDisplayBinding="{Binding Title}" Title="{ext:Tranlsate Select_Theme}" Style="{StaticResource BodySLabelStyle}"/>
+        <Picker Grid.ColumnSpan="2" Grid.Row="3" SelectedItem="{Binding SelectedLanguage}" ItemsSource="{Binding Languages}" ItemDisplayBinding="{Binding Title}" Title="{ext:Tranlsate Select_Lang}" Style="{StaticResource BodySLabelStyle}"/>
     </Grid>
 </ContentPage>

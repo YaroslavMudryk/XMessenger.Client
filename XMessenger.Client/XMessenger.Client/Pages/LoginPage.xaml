@@ -2,11 +2,38 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XMessenger.Client.Pages.LoginPage"
-             Title="LoginPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Login page"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             xmlns:ext="clr-namespace:XMessenger.Client.Extensions"
+             xmlns:converters="clr-namespace:XMessenger.Client.Converters"
+             Style="{StaticResource MainSectionStyle}"
+             Title="{ext:Tranlsate Login_Page}"
+             Shell.TabBarIsVisible="False"
+             Shell.NavBarIsVisible="False">
+    <Grid RowDefinitions="auto,*,*,*">
+        <Label Text="{ext:Tranlsate Login_Page}"
+               Margin="0,50,0,70"
+               Grid.Row="0"
+               Style="{StaticResource H6LabelStyle}" HorizontalOptions="Center"/>
+
+        <Grid Grid.Row="1" RowDefinitions="*,*,*,*,*">
+            <Label Grid.Row="0" Text="{ext:Tranlsate Login_Email}" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start" Margin="15,20,0,0"/>
+            <Entry Grid.Row="1" Text="{Binding Login}" FontSize="16" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="15,0,15,0"/>
+            <Label Grid.Row="2" Text="{ext:Tranlsate Login_Password}" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start" Margin="15,20,0,0"/>
+            <Entry Grid.Row="3" Text="{Binding Password}" IsPassword="True" FontSize="16" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="15,0,15,0"/>
+            <Button Grid.Row="4" BackgroundColor="Blue" Text="{ext:Tranlsate Login_Button}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="15,0,15,0"/>
+        </Grid>
+
+        <Grid Grid.Row="2" IsVisible="{Binding IsVisibleOtherSocials}" RowDefinitions="auto, auto">
+            <Label Text="{ext:Tranlsate Login_Other}" VerticalOptions="Start" HorizontalOptions="Center" Margin="0,15,0,15" Grid.Row="0"/>
+            <Grid Grid.Row="1" RowDefinitions="auto, auto" ColumnDefinitions="*, *" Margin="0,0,0,0" HorizontalOptions="Center">
+                <ImageButton Source="{Binding SocialLinks[0].ImageSource}" HeightRequest="60" WidthRequest="75" Grid.Column="0" Grid.Row="0" Padding="5" IsEnabled="False"/>
+                <ImageButton Source="{Binding SocialLinks[1].ImageSource}" HeightRequest="60" WidthRequest="75" Grid.Column="1" Grid.Row="0" Padding="5" IsEnabled="False"/>
+                <ImageButton Source="{Binding SocialLinks[2].ImageSource}" HeightRequest="60" WidthRequest="75" Grid.Column="0" Grid.Row="1" Padding="5" IsEnabled="False"/>
+                <ImageButton Source="{Binding SocialLinks[3].ImageSource}" HeightRequest="60" WidthRequest="75" Grid.Column="1" Grid.Row="1" Padding="5" IsEnabled="False"/>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="3">
+            
+        </Grid>
+    </Grid>
 </ContentPage>
